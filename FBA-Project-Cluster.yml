@@ -8,7 +8,7 @@ nodeGroups:
      desiredCapacity: 2
      instanceType: t2.micro
      ssh:
-        publicKeyName: fbaeks-key
+        publicKeyName: FB-Project (1)
    - name: ng-mixed
      minSize: 1
      maxSize: 3
@@ -19,4 +19,4 @@ nodeGroups:
        onDemandPercentageAboveBaseCapacity: 50
        spotInstancePools: 2     
      ssh:
-         publicKeyName: fbaeks-key
+         publicKeyName: FB-Project (1)
