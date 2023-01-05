@@ -1,14 +1,14 @@
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 metadata:
-  name: my-eks-cluster
+  name: fba-eks-cluster
   region: us-east-1
 nodeGroups:
   - name: ng1
     desiredCapacity: 2
     instanceType: t2.micro
     ssh:
-      publicKeyName: Fb-Project
+      publicKeyName: fba-Project
   - name: ng2
     minSize: 2
     maxSize: 3
@@ -20,4 +20,4 @@ nodeGroups:
       onDemandPercentageAboveBaseCapacity: 50
       spotInstancePools: 2     
     ssh:
-      publicKeyName: Fb-Project
+      publicKeyName: fba-Project
