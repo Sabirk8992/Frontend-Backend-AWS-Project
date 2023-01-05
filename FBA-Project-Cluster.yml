@@ -1,23 +1,22 @@
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 metadata:
-  name: fba-eks-cluster
-  region: us-east-1
+  name: sabircluser
+  region: ap-south-1
 nodeGroups:
-  - name: ng1
-    desiredCapacity: 2
-    instanceType: t2.micro
-    ssh:
-      publicKeyName: fba-Project
-  - name: ng2
-    minSize: 2
-    maxSize: 3
-    instanceType: t2.micro
-    instancesDistribution:
-      maxPrice: 0.010
-      instanceTypes: ["t2.micro"] 
-      onDemandBaseCapacity: 0
-      onDemandPercentageAboveBaseCapacity: 50
-      spotInstancePools: 2     
-    ssh:
-      publicKeyName: fba-Project
+   - name: ng1
+     desiredCapacity: 2
+     instanceType: t2.micro
+     ssh:
+        publicKeyName: sabireks-key
+   - name: ng-mixed
+     minSize: 1
+     maxSize: 3
+     instancesDistribution:
+       maxPrice: 0.010
+       instanceTypes: ["t2.micro"] 
+       onDemandBaseCapacity: 0
+       onDemandPercentageAboveBaseCapacity: 50
+       spotInstancePools: 2     
+     ssh:
+         publicKeyName: sabireks-key
