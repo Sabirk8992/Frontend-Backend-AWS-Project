@@ -1,0 +1,18 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: efs-sc
+provisioner: efs.csi.aws.com
+parameters:
+  # Replace the below values with your own EFS file system ID and AWS region.
+  # See https://docs.aws.amazon.com/efs/latest/ug/creating-using-create-file-system.html
+  # for more information on how to create an EFS file system.
+  fileSystemId: fs-abcdef01
+  awsRegion: us-west-2
+reclaimPolicy: Retain
+mountOptions:
+  - nfsvers=4.1
+
+
+
+
